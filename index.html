@@ -6,10 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="src/output.css" />
   </head>
+
   <body>
-    <header>
-      <h1 class="logo">Library</h1>
-      <div class="buttons"><button>Login</button></div>
+    <header class="bg-white shadow-md">
+      <div class="container flex justify-between">
+        <h1 class="text-5xl font-bold">Library</h1>
+      </div>
     </header>
+    <main>
+      <div class="container">
+        <div class="flex justify-center items-center p-10 mb-1">
+          <button class="font-semibold text-2xl btn">+Add Book</button>
+        </div>
+        <div class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="card">
+            <p>'Harry Potter'</p>
+            <p>'J K Rolling'</p>
+            <p>222 pages</p>
+            <div class="buttons">
+              <button class="btn btn-green">Read</button>
+              <button class="btn">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
