@@ -30,10 +30,11 @@ bookForm.addEventListener('submit', (event) => {
 
 
 function getBookFromInput() {
-    const title = document.querySelector('#bookName').value 
+    const title = document.querySelector('#bookName').value
     const author = document.querySelector('#authorName').value
     const pages = document.querySelector('#bookLength').value || 0
     const isRead = document.querySelector('#isRead').checked
+    bookForm.reset()
     return new Book(title, author, pages, isRead)
 }
 
@@ -82,7 +83,7 @@ booksContainer.addEventListener('click', (event) => {
         target.classList.remove('btn-green')
         target.classList.add('btn-red')
     }
-    else if(target.textContent == 'Not Read'){
+    else if (target.textContent == 'Not Read') {
         target.textContent = 'Read'
         target.classList.remove('btn-red')
         target.classList.add('btn-green')
