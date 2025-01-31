@@ -30,8 +30,17 @@ body {
 
 .btn-green {
   @apply bg-green-300;
-} 
- 
+}
+
 .btn-red {
   @apply bg-red-300;
+}
+
+.form-control {
+  @apply px-3 py-2 rounded-md;
+}
+
+::backdrop {
+  background-color: gray;
+  opacity: 0.5;
 }
