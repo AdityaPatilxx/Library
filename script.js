@@ -8,7 +8,7 @@ function Book(title, author, pages, hasRead) {
 }
 
 // let harry = new Book('Harry Potter', 'J.K Rolling', '223', true)
-// console.log(harry)
+// makeBookCard(harry)
 
 const addBook = document.querySelector('#addBook')
 const dialog = document.querySelector('dialog')
@@ -30,9 +30,9 @@ bookForm.addEventListener('submit', (event) => {
 
 
 function getBookFromInput() {
-    const title = document.querySelector('#bookName').value
+    const title = document.querySelector('#bookName').value 
     const author = document.querySelector('#authorName').value
-    const pages = document.querySelector('#bookLength').value
+    const pages = document.querySelector('#bookLength').value || 0
     const isRead = document.querySelector('#isRead').checked
     return new Book(title, author, pages, isRead)
 }
@@ -70,3 +70,23 @@ function makeBookCard(book) {
     card.append(title, author, pages, buttonContainer)
     booksContainer.append(card)
 }
+
+booksContainer.addEventListener('click', (event) => {
+    const target = event.target
+    if (target.textContent == 'Remove') {
+        target.parentElement.parentElement.remove()
+    }
+
+    if (target.textContent == 'Read') {
+        target.textContent = 'Not Read'
+        target.classList.remove('btn-green')
+        target.classList.add('btn-red')
+    }
+    else if(target.textContent == 'Not Read'){
+        target.textContent = 'Read'
+        target.classList.remove('btn-red')
+        target.classList.add('btn-green')
+    }
+
+})
+
