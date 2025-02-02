@@ -12,12 +12,6 @@ body {
   @apply font-poppins bg-grey;
 }
 
-html {
-  /* footer support */
-  position: relative;
-  min-height: 100%;
-}
-
 .container {
   @apply max-w-screen-xl mx-auto p-5;
 }
